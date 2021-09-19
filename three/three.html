@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>综合案例-注册页面</title>
+    <style>
+      dt {
+        float: left;
+        width: 80px;
+      }
+      dd {
+        float: left;
+        display: inline;
+      }
+      li {
+        margin-left: -20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h2>青春不常在，抓紧谈恋爱</h2>
+      <div>
+        <dl>
+          <dt>性别</dt>
+          <dd>
+            <input type="radio" name="sex" id="nan" />
+            <label> <img src="/images/man.jpg" />男 </label>
+            <input type="radio" name="sex" id="nv" />
+            <label> <img src="/images/women.jpg" />女 </label>
+          </dd>
+        </dl>
+        <br />
+        <dl>
+          <dt>生日</dt>
+          <dd>
+            <select>
+              <option selected>--请选择年--</option>
+              <option>2000</option>
+              <option>2010</option>
+              <option>2020</option>
+            </select>
+            <select>
+              <option>--请选择月--</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+            <select>
+              <option>--请选择日--</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+          </dd>
+        </dl>
+        <br />
+        <dl>
+          <dt>所在地区</dt>
+          <dd>
+            <input type="text" value="杭州思密达" />
+          </dd>
+        </dl>
+        <br />
+        <dl>
+          <dt>婚姻状况</dt>
+          <dd>
+            <input type="radio" name="hun" id="wei" checked />
+            <label for="wei">未婚</label>
+            <input type="radio" name="hun" id="li" />
+            <label for="li">离婚</label>
+            <input type="radio" name="hun" id="sang" />
+            <label for="sang">丧偶</label>
+          </dd>
+        </dl>
+        <br />
+        <dl>
+          <dt>学历</dt>
+          <dd>
+            <select>
+              <option selected>--请选择--</option>
+              <option>小学</option>
+              <option>初中</option>
+              <option>本科</option>
+            </select>
+          </dd>
+        </dl>
+        <br />
+        <dl>
+          <dt>喜欢的类型</dt>
+          <dd>
+            <input type="checkbox" name="type" id="young" />
+            <label for="young">稚嫩</label>
+            <input type="checkbox" name="type" id="cute" />
+            <label for="cute">可爱</label>
+            <input type="checkbox" name="type" id="sexy" />
+            <label for="sexy">性感</label>
+            <input type="checkbox" name="type" id="all" checked />
+            <label for="all">全都要</label>
+          </dd>
+        </dl>
+        <br />
+        <dl>
+          <dt>自我介绍</dt>
+          <dd>
+            <textarea>我是帅哥</textarea>
+          </dd>
+        </dl>
+      </div>
+      <br /><br />
+      <div>
+        <p>
+          <input type="button" value="免费注册" />
+          <input type="reset" value="重选" />
+        </p>
+        <p>
+          <input type="checkbox" id="rule" checked />
+          <label for="rule">我同意注册条款和会员加入标准</label>
+        </p>
+        <a href="#">我是会员，立即登录</a>
+        <h3>我承诺</h3>
+        <ul>
+          <li>年满18岁、单身</li>
+          <li>抱着严肃的态度</li>
+          <li>真诚寻找另一半</li>
+        </ul>
+      </div>
+    </form>
+  </body>
+</html>
