@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+body {
+    background-color: #f3f5f7;
+}
+
+/* 小箭头 */
+ul li .text .iconfont {
+    position: absolute;
+    color: red;
+    font-size: 1.2em;
+    bottom: -2px;
+    transition: all 0.3s;
+    z-index: 2;
+}
+ul li .text .more:hover .iconfont {
+    transform: translateX(5px);
+}
+ul li .text .more {
+    font-size: 1em;
+}
+
+.box {
+    width: 1400px;
+    height: 315px;
+    margin: 100px auto;
+}
+ul li:first-child {
+    margin-left: 0;
+}
+ul li {
+    float: left;
+    width: 446px;
+    height: 315px;
+    margin-left: 30px;
+    /* background-color: pink; */
+    overflow: hidden;
+}
+ul li a {
+    position: relative;
+    display: block;
+}
+
+/* 图片背景 */
+ul li a img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+}
+ul li a:hover img {
+    transform: scale(1.1);
+}
+
+/* 主要文字 */
+ul li a .text {
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+    color: #fff;
+    transition: all 0.5s;
+    z-index: 2;
+}
+ul li a .text p {
+    padding-bottom: 10px;
+    font-size: 1em;
+}
+ul li a .text .title {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+ul li a .text .sub {
+    padding-bottom: 15px;
+    opacity: 0.7;
+}
+/* 文字位移动画 */
+ul li a:hover .text {
+    transform: translateY(-45px);
+}
+
+/* 遮罩效果 */
+ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.5s;
+}
+ul li a:hover::before {
+    opacity: 1;
+}
