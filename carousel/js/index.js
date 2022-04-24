@@ -46,6 +46,7 @@ window.addEventListener('load', function () {
   // 3. 点击右侧按钮
   var num = 0;
   var circle = 0;
+  var flag = true;
 
   function circleNum() {
     for (var i = 0; i < ol.children.length; i++) {
@@ -54,33 +55,43 @@ window.addEventListener('load', function () {
     ol.children[circle].className = 'current';
   }
   arrow_r.addEventListener('click', function () {
-    if (num == ul.children.length - 1) {
-      ul.style.left = 0;
-      num = 0;
+    if (flag) {
+      flag = false;
+      if (num == ul.children.length - 1) {
+        ul.style.left = 0;
+        num = 0;
+      }
+      num++;
+      circle++;
+      animate(ul, -num * focusWidth, function () {
+        flag = true;
+      });
+      // 小圆圈和图片一起变化
+      if (circle == ol.children.length) {
+        circle = 0;
+      }
+      circleNum();
     }
-    num++;
-    circle++;
-    animate(ul, -num * focusWidth);
-    // 小圆圈和图片一起变化
-    if (circle == ol.children.length) {
-      circle = 0;
-    }
-    circleNum();
   });
   // 4. 点击左侧按钮
   arrow_l.addEventListener('click', function () {
-    if (num == 0) {
-      num = ul.children.length - 1;
-      ul.style.left = -num * focusWidth + 'px';
+    if (flag) {
+      flag = false;
+      if (num == 0) {
+        num = ul.children.length - 1;
+        ul.style.left = -num * focusWidth + 'px';
+      }
+      num--;
+      circle--;
+      animate(ul, -num * focusWidth, function () {
+        flag = true;
+      });
+      // 小圆圈和图片一起变化
+      if (circle < 0) {
+        circle = ol.children.length - 1;
+      }
+      circleNum();
     }
-    num--;
-    circle--;
-    animate(ul, -num * focusWidth);
-    // 小圆圈和图片一起变化
-    if (circle < 0) {
-      circle = ol.children.length - 1;
-    }
-    circleNum();
   });
   // 5. 定时自动轮播图片
   var timer = setInterval(function () {
